@@ -104,16 +104,6 @@ export default function GroceryScreen({ route }) {
     setItems(items.filter(({ name }) => name !== itemName));
   };
 
-  // useEffect(() => {
-  //   if (
-  //     route.params &&
-  //     route.params.ingredients &&
-  //     route.params.ingredients.length > 0
-  //   ) {
-  //     addNewItems(route.params.ingredients);
-  //   }
-  // }, [route.params.ingredients]);
-
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
@@ -168,7 +158,7 @@ export default function GroceryScreen({ route }) {
             value={newItem}
             placeholder="Add Grocery Item Name"
             onChangeText={(value) => setNewItem(value)}
-          ></Input>
+          />
           <View style={styles.addButton}>
             <Button title="Add Item" onPress={() => addNewItem(newItem)} />
           </View>

@@ -50,7 +50,13 @@ export default function SignupScreen({ navigation }) {
             containerStyle={styles.control}
             value={value.email}
             onChangeText={(text) => setValue({ ...value, email: text })}
-            leftIcon={<FontAwesome name="envelope" size={16} />}
+            leftIcon={
+              <FontAwesome
+                name="envelope"
+                size={14}
+                style={{ marginRight: 10 }}
+              />
+            }
           />
 
           <Input
@@ -59,13 +65,21 @@ export default function SignupScreen({ navigation }) {
             value={value.password}
             onChangeText={(text) => setValue({ ...value, password: text })}
             secureTextEntry={true}
-            leftIcon={<FontAwesome name="key" size={16} />}
+            leftIcon={
+              <FontAwesome
+                name="lock"
+                size={18}
+                color="black"
+                style={{ marginRight: 10 }}
+              />
+            }
           />
 
           <View style={styles.buttons}>
             <Button title="Sign up" style={styles.button} onPress={signUp} />
             <Button
               title="Sign in"
+              type="outline"
               onPress={() => navigation.navigate("Sign In")}
             />
           </View>
@@ -96,5 +110,9 @@ const styles = StyleSheet.create({
     padding: 10,
     color: "#fff",
     backgroundColor: "#D54826FF",
+  },
+  buttons: {
+    flexDirection: "column",
+    gap: 40,
   },
 });
